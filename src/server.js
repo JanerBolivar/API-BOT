@@ -5,7 +5,7 @@ import router from "./routes/index.js"
 
 
 //Puerto del servidor
-const port = process.env.PORT || 3000
+const port = process.env.PORT_API_BOT || 3000
 const app = express()
 
 app.use(cors())
