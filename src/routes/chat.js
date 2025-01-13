@@ -6,7 +6,7 @@ const chat = express.Router();
 
 // Ruta para obtener una pregunta aleatoria
 chat.post('/new-chat', async (req, res) => {
-    const { avatar, message } = req.body;
+    const { avatar_id, avatar, message } = req.body;
 
     try {
         const response = await axios.post(
@@ -27,6 +27,7 @@ chat.post('/new-chat', async (req, res) => {
         res.status(200).json({
             avatar: avatar,
             mensaje: message,
+            avatar_id: avatar_id,
             aiResponse: aiResponse
         });
     } catch (error) {
